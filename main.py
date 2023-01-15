@@ -3,7 +3,7 @@ py.init()
 running = True
 width,height = 800,500
 screen = py.display.set_mode((width,height))
-# player = py.image.load('images/Flappy bird.png')
+player = py.image.load('images/angry-birds.png')
 bg_img = py.image.load('images/bg.png').convert()
 bg_img = py.transform.scale(bg_img,(width,height))
 icon_img = py.image.load('images/icon.png')
@@ -15,6 +15,6 @@ while running:
         if event.type == py.QUIT:
             running = False
     # screen.fill((255,255,255))
-    # screen.blit(player,(370,400))
+    screen.blit(player,(370,400))
     py.display.update()
         
