@@ -6,7 +6,9 @@ screen = py.display.set_mode((width,height))
 # player = py.image.load('images/Flappy bird.png')
 bg_img = py.image.load('images/bg.png').convert()
 bg_img = py.transform.scale(bg_img,(width,height))
+icon_img = py.image.load('images/icon.png')
 title = py.display.set_caption("Angry Bird")
+icon = py.display.set_icon(icon_img)
 while running:
     screen.blit(bg_img,(0, 0))
     for event in py.event.get():
