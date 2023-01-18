@@ -9,12 +9,18 @@ bg_img = py.transform.scale(bg_img,(width,height))
 icon_img = py.image.load('images/icon.png')
 title = py.display.set_caption("Angry Bird")
 icon = py.display.set_icon(icon_img)
+Posx,Posy = 370,400
 while running:
+    py.time.delay(10)
+    screen.blit(player,(Posx,Posy))
     screen.blit(bg_img,(0, 0))
     for event in py.event.get():
         if event.type == py.QUIT:
             running = False
     # screen.fill((255,255,255))
-    screen.blit(player,(370,400))
+    key = py.key.get_pressed()
+    if key[py.K_SPACE]:
+        Posy -= 10
+    screen.blit(player,(Posx,Posy))        
     py.display.update()
-        
+py.quit()
